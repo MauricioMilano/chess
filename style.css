@@ -1,0 +1,81 @@
+h1{
+    text-align: center;
+    display: block;
+    color:white;
+    margin: 30px 0;
+}
+body{ 
+    background:black;
+}
+/* .frame { 
+    width: 720px;
+    height: 720px;
+    margin:40px auto;
+    display: block;
+    background: white;
+} */
+
+/* .slot {
+    width: 80px;
+    height: 80px; 
+    display: inline-block;
+    box-sizing: border-box;
+}
+.black{
+    background-color: black;
+}
+.white { 
+    border:3px solid black;
+    
+}
+.black p {
+    color:white;
+}
+p{
+    font-family: 'Anton', sans-serif;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    text-align: center;
+    margin: 0px;
+    padding:22px 0px;
+    box-sizing: border-box;
+    font-size: 25px;
+}
+.selected { 
+    background-color: yellow;
+} */
+
+div#board1 {
+    display: block;
+    margin: 20px auto;
+}
+
+.btn {
+    width: 160px;
+    display: inline-block;
+    padding:20px;
+    text-align: center;
+    border-radius: 5%;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: gray;
+    transition:0.3s;
+    cursor: pointer;
+    border-color:3px solid white;
+}
+.btn:hover {
+    transition:0.3s;
+    color:black, 
+    -webkit-box-shadow: inset 120px 0px 0px 0px rgba(199,139,199,1);
+    -moz-box-shadow: inset 120px 0px 0px 0px rgba(199,139,199,1);
+    box-shadow: inset 120px 0px 0px 0px rgba(199,139,199,1);
+    
+}
+.btn-box{
+    width: 420px;
+    margin: 50px auto;
+    
+}
