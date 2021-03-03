@@ -69,9 +69,9 @@ div#board1 {
 .btn:hover {
     transition:0.3s;
     color:black, 
-    -webkit-box-shadow: inset 120px 0px 0px 0px rgba(199,139,199,1);
-    -moz-box-shadow: inset 120px 0px 0px 0px rgba(199,139,199,1);
-    box-shadow: inset 120px 0px 0px 0px rgba(199,139,199,1);
+    -webkit-box-shadow: inset 300px 0px 0px 0px rgba(199,139,199,1);
+    -moz-box-shadow: inset 300px 0px 0px 0px rgba(199,139,199,1);
+    box-shadow: inset 300px 0px 0px 0px rgba(199,139,199,1);
     
 }
 .btn-box{
