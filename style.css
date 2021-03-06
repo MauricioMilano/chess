@@ -1,81 +1,69 @@
 h1{
     text-align: center;
     display: block;
-    color:white;
-    margin: 30px 0;
+    color:black;
+    margin-top: 100px;
+    margin-bottom: 20px;
 }
-body{ 
-    background:black;
-}
-/* .frame { 
-    width: 720px;
-    height: 720px;
-    margin:40px auto;
-    display: block;
-    background: white;
-} */
 
-/* .slot {
-    width: 80px;
-    height: 80px; 
-    display: inline-block;
-    box-sizing: border-box;
-}
-.black{
-    background-color: black;
-}
-.white { 
-    border:3px solid black;
-    
-}
-.black p {
-    color:white;
-}
-p{
-    font-family: 'Anton', sans-serif;
-    width: 80px;
-    height: 80px;
-    position: absolute;
+h2 { 
     text-align: center;
-    margin: 0px;
-    padding:22px 0px;
-    box-sizing: border-box;
-    font-size: 25px;
 }
-.selected { 
-    background-color: yellow;
-} */
 
-div#board1 {
-    display: block;
+body{ 
+    background:#eee;
+    font-family: sans-serif;
+}
+
+.partida {
+    display: none;
+}
+
+.tabuleiro {
     margin: 20px auto;
+    width: 600px
 }
 
-.btn {
-    width: 160px;
+.botaoLimpar {
+    position: relative;
+    margin: 0 auto;
+    width: 200px;
+}
+
+button {
+    width: 200px;
     display: inline-block;
     padding:20px;
     text-align: center;
     border-radius: 5%;
     color: white;
+    background-color: #000;
+    border: none;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 15px;
     text-transform: uppercase;
-    background-color: gray;
-    transition:0.3s;
     cursor: pointer;
     border-color:3px solid white;
+    box-shadow: 0 0 0 2px #000 inset;
+    transition: background .4s ease, color .4s ease;
 }
-.btn:hover {
-    transition:0.3s;
-    color:black, 
-    -webkit-box-shadow: inset 300px 0px 0px 0px rgba(199,139,199,1);
-    -moz-box-shadow: inset 300px 0px 0px 0px rgba(199,139,199,1);
-    box-shadow: inset 300px 0px 0px 0px rgba(199,139,199,1);
-    
+
+button:hover {
+    box-shadow: 0 0 0 2px #000 inset;
+    color: #000;
+    background-color: transparent;
 }
-.btn-box{
-    width: 420px;
+
+.wrap {
+    margin: auto;
+}
+
+.box{
+    width: 600px;
     margin: 50px auto;
-    
+}
+
+.btn-box {
+    width: 450px;
+    margin: 50px auto;
 }
