@@ -40,11 +40,7 @@ function exibirTabuleiro() {
   let partida = document.querySelector('.partida');
   modalIniciarPartida.style.display = "none";
   partida.style.display = "block";
-  var config = {
-    showNotation: false,
-    position: 'start'
-  }
-  Chessboard('board1', config)
+  board1.start();
 }
 
 // Modal de Ajuda
