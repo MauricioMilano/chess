@@ -1,11 +1,12 @@
 class Xadrez {
-    
-    constructor() {
-        this._config = {};
-    }
 
     iniciaJogo() {
-        Chessboard('board1', this.config).start();
+        this._tabuleiro = Chessboard('board1', this.config);
+        this._tabuleiro.start();
+    }
+
+    limpar() {
+        this._tabuleiro.clear();
     }
 
     get config() {
@@ -16,5 +17,8 @@ class Xadrez {
             position: 'start'
         };
     }
-}
 
+    get tabuleiro() {
+        return this._tabuleiro
+    }
+}

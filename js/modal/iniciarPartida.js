@@ -16,9 +16,8 @@ botaoFecharModalIniciarPartida.addEventListener('click', function (e) {
 });
 
 botaoOutroJogador.addEventListener('click', function (e) {
-    let partida = document.querySelector('.partida');
+    document.querySelector('.partida').style.display = "block";
+    document.querySelector('#cabecalho').style.display = "none";
     modalIniciarPartida.style.display = "none";
-    partida.style.display = "block";
-    let xadrez = new Xadrez();
     xadrez.iniciaJogo();
 });

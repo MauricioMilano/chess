@@ -15,13 +15,15 @@
 
 <body>
 
-   <h1>Xadrezin</h1>
-   <h2>Um jogo de xadrez pra você jogar com um amigo ou até mesmo sozinho!</h2>
+   <section id="cabecalho">
+      <h1>Xadrezin</h1>
+      <h2>Um jogo de xadrez pra você jogar com um amigo ou até mesmo sozinho!</h2>
+   </section>
 
    <div class="partida">
       <div id="board1" class="tabuleiro"></div>
       <div class="botaoLimpar">
-         <button onclick="board1.clear()">Limpar</button>
+         <button onclick="xadrez.limpar()">Limpar</button>
       </div>
    </div>
    <section>
@@ -59,5 +61,6 @@
 <script src="js/menu.js"></script>
 <script src="js/modal/ajuda.js"></script>
 <script src="js/modal/iniciarPartida.js"></script>
+<script>let xadrez = new Xadrez();</script>
 
 </html>
