@@ -10,11 +10,15 @@ class Xadrez {
     }
 
     get config() {
+        this.movimentacao = new Movimentacao();
         return {
             draggable: true,
             dropOffBoard: 'snapback',
             showNotation: false,
-            position: 'start'
+            position: 'start',
+            onDragStart: this.movimentacao.onDragStart,
+            onDrop: this.movimentacao.onDrop,
+            onSnapEnd: this.movimentacao.onSnapEnd
         };
     }
 
