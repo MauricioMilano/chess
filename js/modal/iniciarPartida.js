@@ -18,6 +18,7 @@ botaoFecharModalIniciarPartida.addEventListener('click', function (e) {
 botaoOutroJogador.addEventListener('click', function (e) {
     document.querySelector('.partida').style.display = "block";
     document.querySelector('#cabecalho').style.display = "none";
+    document.querySelector('#inicio').style.display = "none";
     modalIniciarPartida.style.display = "none";
     xadrez.iniciaJogo();
 });

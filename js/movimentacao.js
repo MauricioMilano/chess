@@ -42,7 +42,7 @@ class Movimentacao {
 }
 updateStatus =  () => {
     var status = 'O jogo iniciou'
-    new Cronometro().setCountDownDate(5)
+    new Cronometro().setCountDownDate(3)
     var moveColor = 'Branca'
     if (game.turn() === 'b') {
         moveColor = 'Preta'

@@ -1,0 +1,46 @@
+.mensagem {
+    position: absolute;
+    right: 100px;
+    top: 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.imagem {
+    width: 45px;
+    height: 45px;
+    background-image: url('../img//robo.png');
+    background-size: cover;
+    margin-top: 10px;
+}
+
+.balao{
+    background: #000;
+    line-height: 1.6em;  
+    border-radius: 7px;
+    width: 200px;
+    height: auto;
+    padding: 20px;
+    position: relative;
+    margin-left: 25px;
+}
+
+.balao:after{ 
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid #000;
+    left: -18px; 
+    top: 18px;
+}
+
+p {
+    font-size: 0.85em;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+}

@@ -1,4 +1,4 @@
-var countDownDate = new Date(new Date().getTime() + 5 *60000).getTime();
+var countDownDate = new Date(new Date().getTime() + 3 *60000).getTime();
 
 class Cronometro{
     constructor(){
@@ -26,12 +26,12 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
   // Output the result in an element with id="clock"
-  document.getElementById("clock").innerHTML = `0${minutes}:${`${seconds}`.padStart(2,"0")}`;
+  document.getElementById("clock").innerHTML = `Tempo restante: 0${minutes}:${`${seconds}`.padStart(2,"0")}`;
     
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("clock").innerHTML = "EXPIRED";
+    document.getElementById("clock").innerHTML = "Acabou o Tempo!";
   }
 }, 1000);
 
