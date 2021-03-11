@@ -18,6 +18,8 @@ class Xadrez {
             position: 'start',
             onDragStart: this.movimentacao.onDragStart,
             onDrop: this.movimentacao.onDrop,
+            onMouseoutSquare: this.movimentacao.onMouseoutSquare,
+            onMouseoverSquare: this.movimentacao.onMouseoverSquare,
             onSnapEnd: this.movimentacao.onSnapEnd
         };
     }
