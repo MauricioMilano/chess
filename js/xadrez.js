@@ -1,6 +1,7 @@
 class Xadrez {
 
-    iniciaJogo() {
+    iniciaJogo(tipoDoJogo) {
+        this.tipoDoJogo = tipoDoJogo;
         this._tabuleiro = Chessboard('board1', this.config);
         this._tabuleiro.start();
     }
@@ -10,7 +11,8 @@ class Xadrez {
     }
 
     get config() {
-        this.movimentacao = new Movimentacao();
+
+        this.movimentacao = this.tipoDoJogo == TipoDoJogo.Computador ? new Computador() : new Movimentacao();
         return {
             draggable: true,
             dropOffBoard: 'snapback',

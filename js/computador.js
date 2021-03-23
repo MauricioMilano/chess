@@ -15,35 +15,45 @@ function greySquare(square) {
     $square.css('background', background)
 }
 
-class Movimentacao {
-
-    // constructor(tipoDoJogo) {
-    //     this.tipoDoJogo = tipoDoJogo;
-    // }
+class Computador {
 
     onDragStart(source, piece, position, orientation) {
-        // do not pick up pieces if the game is over
         if (game.game_over()) return false
 
-        // only pick up pieces for the side to move
-        if ((game.turn() === 'w' && piece.search(/^b/) !== -1) ||
-            (game.turn() === 'b' && piece.search(/^w/) !== -1)) {
-            return false
-        }
+        if (piece.search(/^b/) !== -1) return false
     }
 
+    makeRandomMove() {
+        var possibleMoves = game.moves()
+      
+        // game over
+        if (possibleMoves.length === 0) return
+      
+        var randomIdx = Math.floor(Math.random() * possibleMoves.length)
+        game.move(possibleMoves[randomIdx])
+        xadrez.tabuleiro.position(game.fen())
+      }
+
     onDrop(source, target) {
-        // see if the move is legal
         var move = game.move({
             from: source,
             to: target,
-            promotion: 'q' // NOTE: always promote to a queen for example simplicity
+            promotion: 'q'
         })
 
-        // illegal move
         if (move === null) return 'snapback'
 
-        updateStatus()
+        window.setTimeout(() => {
+            var possibleMoves = game.moves()
+      
+        // game over
+        if (possibleMoves.length === 0) return
+      
+        var randomIdx = Math.floor(Math.random() * possibleMoves.length)
+        game.move(possibleMoves[randomIdx])
+        xadrez.tabuleiro.position(game.fen())
+        }, 250)
+
     }
 
     onMouseoverSquare(square, piece) {
