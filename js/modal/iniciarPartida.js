@@ -1,7 +1,12 @@
 var modalIniciarPartida = document.querySelector('#modal-iniciar-partida');
+var modalEscolherPeca = document.querySelector('#modal-escolher-peca');
 var botaoIniciarPartida = document.querySelector('#botao-iniciar-partida');
-var botaoOutroJogador = document.querySelector('#outro-jogador');
 var botaoComputador = document.querySelector('#computador');
+var botaoOutroJogador = document.querySelector('#outro-jogador');
+var botaoPecaBranca = document.querySelector('#peca-branca');
+var botaoPecaPreta = document.querySelector('#peca-preta');
+
+var corDaPecaEscolhida = null;
 
 botaoIniciarPartida.addEventListener('click', function (e) {
     let menu = new Menu();
@@ -15,7 +20,19 @@ botaoOutroJogador.addEventListener('click', function (e) {
 });
 
 botaoComputador.addEventListener('click', function (e) {
+    modalIniciarPartida.style.display = "none";
+    modalEscolherPeca.style.display = "block";
+});
+
+botaoPecaBranca.addEventListener('click', function (e) {
     iniciarPartida();
+    corDaPecaEscolhida = CorDaPeca.Branca;
+    xadrez.iniciaJogo(TipoDoJogo.Computador);
+});
+
+botaoPecaPreta.addEventListener('click', function (e) {
+    iniciarPartida();
+    corDaPecaEscolhida = CorDaPeca.Preta;
     xadrez.iniciaJogo(TipoDoJogo.Computador);
 });
 

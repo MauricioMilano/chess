@@ -1800,7 +1800,36 @@ var Chess = function(fen) {
   
         return pretty_move
       },
-  
+      validateMovementAndPromotion: (move)=>{
+        var moves = generate_moves();
+        let found = false; 
+        for (var i = 0, len = moves.length; i < len; i++) {
+          if (
+            move.from === algebraic(moves[i].from) &&
+            move.to === algebraic(moves[i].to) ) {
+              if (('promotion' in moves[i])){
+                return {
+                  movement: true,
+                  promotion: true,
+                }
+              }else{
+                found = true
+              }
+            }
+        }
+        if (found){
+          return {
+            movement:true,
+            promotion:false
+          }
+        }else{
+          return {
+            movement:false,
+            promotion:false
+          }
+        }
+      },
+
       undo: function() {
         var move = undo_move()
         return move ? make_pretty(move) : null

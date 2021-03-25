@@ -1,23 +1,21 @@
-var board = null
 var $status = $('#status')
 var $fen = $('#fen')
 var $pgn = $('#pgn')
 
-class Computador extends Movimentacao {
+
+class OutroJogador extends Movimentacao {
 
     onDragStart(source, piece, position, orientation) {
-        super.onDragStart(source, piece, position, orientation);
-        
-        if (corDaPecaEscolhida == CorDaPeca.Preta) {
-            if (piece.search(/^w/) !== -1) return false
-        } else {
-            if (piece.search(/^b/) !== -1) return false
+       super.onDragStart(source, piece, position, orientation)
+        if ((game.turn() === 'w' && piece.search(/^b/) !== -1) ||
+            (game.turn() === 'b' && piece.search(/^w/) !== -1)) {
+            return false
         }
     }
 
     onDrop(source, target) {
-        super.onDrop(source, target);
-        movimentoAleatorio();
+       super.onDrop(source, target);
+        updateStatus()
     }
 
 }

@@ -4,15 +4,23 @@ class Xadrez {
         this.tipoDoJogo = tipoDoJogo;
         this._tabuleiro = Chessboard('board1', this.config);
         this._tabuleiro.start();
+        corDaPecaEscolhida == CorDaPeca.Preta && this.virarTabuleiro();
     }
 
     limpar() {
         this._tabuleiro.clear();
     }
 
-    get config() {
 
-        this.movimentacao = this.tipoDoJogo == TipoDoJogo.Computador ? new Computador() : new Movimentacao();
+    virarTabuleiro() {
+        this._tabuleiro.flip();
+    }
+
+
+    get config() {
+        this.movimentacao = this.tipoDoJogo == TipoDoJogo.Computador ? new Computador() : new OutroJogador();
+        corDaPecaEscolhida == CorDaPeca.Preta && movimentoAleatorio();
+        
         return {
             draggable: true,
             dropOffBoard: 'snapback',

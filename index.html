@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
    <section id="cabecalho">
       <h1>Xadrezin</h1>
       <h2>Um jogo de xadrez pra você jogar com um amigo ou até mesmo sozinho!</h2>
@@ -50,6 +49,15 @@
             </div>
          </div>
          <div class="wrap">
+            <div class="modal" id="modal-escolher-peca">
+               <h4>Escolha uma cor de peça:</h4>
+               <div class="btn-box">
+                  <button class="peca branca" id="peca-branca"></button>
+                  <button class="peca preta" id="peca-preta"></button>
+               </div>
+            </div>
+         </div>
+         <div class="wrap">
             <div class="modal" id="modal-ajuda">
                <h4>Em Breve!</h4>
                <div class="btn-box">
@@ -67,11 +75,14 @@
 <script src="js/engine/chessboard-1.0.0.js"></script>
 <script src="js/engine/chess.js"></script>
 <script src="js/xadrez.js"></script>
+<script src="js/models/TipoDoJogo.js"></script>
+<script src="js/models/CorDaPeca.js"></script>
 <script src="js/menu.js"></script>
 <script src="js/modal/ajuda.js"></script>
 <script src="js/modal/iniciarPartida.js"></script>
-<script src="js/models/TipoDoJogo.js"></script>
 <script src="js/movimentacao.js"></script>
+<script src="js/movimentoAleatorio.js"></script>
+<script src="js/outroJogador.js"></script>
 <script src="js/computador.js"></script>
 <script src="js/cronometro.js"></script>
 <script>let xadrez = new Xadrez();</script>
