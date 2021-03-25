@@ -14,6 +14,13 @@ function quadradoCinza(quadrado) {
 
 class Movimentacao {
 
+    constructor() {
+        if(this.constructor == Movimentacao){
+            throw new Error("Você não deveria instanciar um objeto do tipo Movimentcao diretamente, pois essa é uma classe abstata");
+        }
+    }
+
+
     onDragStart(source, piece, position, orientation) {
         if (game.game_over()) {
             return false
