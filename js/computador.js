@@ -24,7 +24,7 @@ class Computador extends Movimentacao {
 }
 
 atualizarStatusPC = () => {
-    new Cronometro().setCountDownDate(3)
+    new Cronometro().setCountDownDate(0.1)
     
     var vezDoJogador = (game.turn() === 'b') && (corDaPecaEscolhida == CorDaPeca.Branca)
     

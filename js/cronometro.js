@@ -34,13 +34,14 @@ botaoVoltarJogo.addEventListener('click', function (e) {
   modalTempoAcabou.style.display = "none";
   document.querySelector('#inicio').style.display = "none";
   document.querySelector('.partida').style.display = "block";
-  new Cronometro().setCountDownDate(3)
+  new Cronometro().setCountDownDate(3);
 });
 
 botaoVoltarMenu.addEventListener('click', function (e) {
+  xadrez.zerarJogo();
   modalTempoAcabou.style.display = "none";
-  document.querySelector('#inicio').style.display = "block";
   document.querySelector('#cabecalho').style.display = "block";
   let menu = new Menu();
   menu.exibir();
+  new Cronometro().setCountDownDate(10);
 });
