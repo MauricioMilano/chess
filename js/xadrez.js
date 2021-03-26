@@ -19,7 +19,12 @@ class Xadrez {
 
     get config() {
         this.movimentacao = this.tipoDoJogo == TipoDoJogo.Computador ? new Computador() : new OutroJogador();
-        corDaPecaEscolhida == CorDaPeca.Preta && movimentoAleatorio();
+        new Cronometro().setCountDownDate(3);
+
+        if (corDaPecaEscolhida == CorDaPeca.Preta) {
+            movimentoAleatorio();
+            $('#status').html("Sua vez!");
+        }
         
         return {
             draggable: true,

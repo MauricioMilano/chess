@@ -7,5 +7,5 @@ function movimentoAleatorio() {
         var randomIdx = Math.floor(Math.random() * possibleMoves.length)
         game.move(possibleMoves[randomIdx])
         xadrez.tabuleiro.position(game.fen())
-    }, 250)
+    }, 300)
 }

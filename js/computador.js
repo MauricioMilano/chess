@@ -18,35 +18,47 @@ class Computador extends Movimentacao {
     onDrop(source, target) {
         super.onDrop(source, target);
         movimentoAleatorio();
+        atualizarStatusPC();
     }
 
 }
 
-updateStatus = () => {
-    var status = 'O jogo iniciou'
+atualizarStatusPC = () => {
     new Cronometro().setCountDownDate(3)
-    var moveColor = 'Branca'
-    if (game.turn() === 'b') {
-        moveColor = 'Preta'
+    
+    var vezDoJogador = (game.turn() === 'b') && (corDaPecaEscolhida == CorDaPeca.Branca)
+    
+    var frasesAleatorias = [
+        "Mas você tem certeza que fez essa jogada?",
+        "Se eu tivesse uma avó, ela jogaria mais rápido que você...",
+        "Ótima jogada, não estava preparado!",
+        "Aulas, padrin!",
+        "Brabo.",
+        "Aulas e palestras!",
+        "Bem pensado...",
+        "É só isso que você consegue fazer?"
+    ]
+    
+    var fraseAleatoria = frasesAleatorias[Math.floor(Math.random() * frasesAleatorias.length)];
+    
+    var status = 'Sua vez! '
+    
+    if (game.in_checkmate() && vezDoJogador) {
+        status = 'Jogo acabou, você está em cheque mate.'
     }
-
-    // checkmate?
-    if (game.in_checkmate()) {
-        status = 'Jogo acabou, ' + moveColor + ' está em cheque mate'
+    else if (game.in_checkmate()) {
+        status = 'Jogo acabou, estou em cheque mate.'
     }
-
-    // draw?
+    
     else if (game.in_draw()) {
-        status = 'Jogo acabou, empate'
+        status = 'Jogo acabou, empate.'
     }
-
-    // game still on
+    
     else {
-        status = "Vez da peça " + moveColor
-
-        // check?
-        if (game.in_check()) {
-            status += ', ' + moveColor + ' está em cheque'
+        if (game.in_check() && vezDoJogador) {
+            status += 'Você está em cheque. '
+        } else {
+            status += fraseAleatoria
         }
     }
 

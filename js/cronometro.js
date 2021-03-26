@@ -1,38 +1,46 @@
-var countDownDate = new Date(new Date().getTime() + 3 *60000).getTime();
+var modalTempoAcabou = document.querySelector('#modal-acabou-tempo-partida');
+var botaoVoltarJogo = document.querySelector('#voltar-jogo');
+var botaoVoltarMenu = document.querySelector('#voltar-menu');
 
-class Cronometro{
-    constructor(){
+var countDownDate = null;
 
-    }
+class Cronometro {
     setCountDownDate (minutes){
-        countDownDate = new Date(new Date().getTime() + minutes *60000).getTime();
+        countDownDate = new Date(new Date().getTime() + minutes * 60000).getTime();
     }
 }
 
-
-// Update the count down every 1 second
 var x = setInterval(function() {
-
-  // Get today's date and time
   var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
+  
+  countDownDate = countDownDate == null ? new Date(new Date().getTime() + 10 * 60000).getTime() : countDownDate;
   var distance = countDownDate - now;
     
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-  // Output the result in an element with id="clock"
   document.getElementById("clock").innerHTML = `Tempo restante: 0${minutes}:${`${seconds}`.padStart(2,"0")}`;
     
-  // If the count down is over, write some text 
   if (distance < 0) {
-    clearInterval(x);
+    document.querySelector('.partida').style.display = "none";
+    document.querySelector('#inicio').style.display = "block";
+    modalTempoAcabou.style.display = "block";
     document.getElementById("clock").innerHTML = "Acabou o Tempo!";
   }
 }, 1000);
 
- 
+
+botaoVoltarJogo.addEventListener('click', function (e) {
+  modalTempoAcabou.style.display = "none";
+  document.querySelector('#inicio').style.display = "none";
+  document.querySelector('.partida').style.display = "block";
+  new Cronometro().setCountDownDate(3)
+});
+
+botaoVoltarMenu.addEventListener('click', function (e) {
+  modalTempoAcabou.style.display = "none";
+  document.querySelector('#inicio').style.display = "block";
+  document.querySelector('#cabecalho').style.display = "block";
+  let menu = new Menu();
+  menu.exibir();
+});
