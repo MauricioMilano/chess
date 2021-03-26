@@ -16,18 +16,29 @@ function quadradoCinza(quadrado) {
 
     $quadrado.css('background', background);
 }
-function promoverPeca(p,piece){
+function promoverPeca(p){
+    // coloco a promoção no objeto a ser movido 
     hold.promotion = p
+    // tiro a tela de promoção
     promocaoDisplay.style.display = "none";
-    // xadrez.tabuleiro.position.
+    // pego a posicão que estava o xadrez 
     let position = xadrez.tabuleiro.position()
-    position[hold.to] = `w${p.toUpperCase()}`;
-    delete position[hold.from]
-    inPromotion = false
+    // movo a peça visualmente e promovo. 
     xadrez.tabuleiro.move(`${hold.from}-${hold.to}`,`w${p.toUpperCase()}`)
+    if (game.turn() === 'b'){
+        position[hold.to] = `b${p.toUpperCase()}`;
+    }else{
+        position[hold.to] = `w${p.toUpperCase()}`;
+
+    }
+    // apago a peça antiga viualmente
+    delete position[hold.from]
     xadrez.tabuleiro.position(position)
+    // faço o movimento real dentro das regras 
     game.move(hold)
-    // updateStatus()
+    // desbloqueio o tabuleiro
+    inPromotion = false
+
 }
 class Movimentacao {
 
