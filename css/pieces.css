@@ -1,0 +1,49 @@
+
+.bB{ 
+    background-image: url('../img/chesspieces/wikipedia/bB.png');    
+    background-color: white;
+}
+.bK{
+      background-image: url('../img/chesspieces/wikipedia/bK.png');
+      background-color: white;
+}
+.bN{
+      background-image: url('../img/chesspieces/wikipedia/bN.png');
+      background-color: white;
+}
+.bP{
+      background-image: url('../img/chesspieces/wikipedia/bP.png');
+      background-color: white;
+}
+.bQ{
+      background-image: url('../img/chesspieces/wikipedia/bQ.png');
+      background-color: white;
+}
+.bR{
+      background-image: url('../img/chesspieces/wikipedia/bR.png');
+      background-color: white;
+} 
+.wB{
+      background-image: url('../img/chesspieces/wikipedia/wB.png');
+}
+.wK{
+      background-image: url('../img/chesspieces/wikipedia/wK.png');
+}
+.wN{
+      background-image: url('../img/chesspieces/wikipedia/wN.png');
+}
+.wP{
+      background-image: url('../img/chesspieces/wikipedia/wP.png');
+}
+.wQ{
+      background-image: url('../img/chesspieces/wikipedia/wQ.png');
+}
+.wR{
+      background-image: url('../img/chesspieces/wikipedia/wR.png');
+}
+.piece {
+      width: 80px;
+      height: 80px;
+      background-color: white;
+
+}

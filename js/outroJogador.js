@@ -26,6 +26,7 @@ updateStatus = () => {
     var moveColor = 'Branca'
     if (game.turn() === 'b') {
         moveColor = 'Preta'
+
     }
 
     // checkmate?
@@ -47,7 +48,7 @@ updateStatus = () => {
             status += ', ' + moveColor + ' está em cheque'
         }
     }
-
+    console.log(game.position())
     $status.html(status)
     $fen.html(game.fen())
     $pgn.html(game.pgn())

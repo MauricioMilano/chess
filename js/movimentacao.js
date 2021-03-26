@@ -1,6 +1,11 @@
+var promocaoDisplay = document.querySelector('#promocao-preta');
 var game = new Chess()
 var $fen = $('#fen');
-
+var hold = {
+    from:"",
+    to: "" 
+}
+var inPromotion = false; 
 function quadradoCinza(quadrado) {
     var $quadrado = $('#board1 .square-' + quadrado)
     
@@ -11,7 +16,19 @@ function quadradoCinza(quadrado) {
 
     $quadrado.css('background', background);
 }
-
+function promoverPeca(p,piece){
+    hold.promotion = p
+    promocaoDisplay.style.display = "none";
+    // xadrez.tabuleiro.position.
+    let position = xadrez.tabuleiro.position()
+    position[hold.to] = `w${p.toUpperCase()}`;
+    delete position[hold.from]
+    inPromotion = false
+    xadrez.tabuleiro.move(`${hold.from}-${hold.to}`,`w${p.toUpperCase()}`)
+    xadrez.tabuleiro.position(position)
+    game.move(hold)
+    // updateStatus()
+}
 class Movimentacao {
 
     constructor() {
@@ -25,19 +42,31 @@ class Movimentacao {
         if (game.game_over()) {
             return false
         }
+        
     }
 
     onDrop(source, target) {
+        if (inPromotion){
+            return "snapback"
+        }
         const movimentacao = {
             from: source,
             to: target,
-            promotion: 'q' 
         }
-        // var movimento = null;
-        // let validation = game.validateMovementAndPromotion(movimentacao)
-        // if(validation.movement){
-        var movimento = game.move(movimentacao)
-        // }
+        var movimento = null;
+        let validation = game.validateMovementAndPromotion(movimentacao)
+        if(validation.movement){
+            hold = movimentacao
+            if (validation.promotion){
+                promocaoDisplay.style.display = "block";
+                promocaoDisplay.style.left = `${(mouse_x - 80)}px`
+                promocaoDisplay.style.top = `${(mouse_y - 80)}px`
+                inPromotion = true;
+            }else{
+                movimento = game.move(movimentacao)
+            }
+        }
+
         if (movimento!=null){
             return 'snapback'
         }
