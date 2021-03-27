@@ -30,7 +30,7 @@
          </div>
       </div>
       <div class="botaoLimpar">
-         <button onclick="xadrez.zerarJogo()">Limpar</button>
+         <button onclick="xadrez.zerarJogo()">Zerar Jogo</button>
       </div>
    </div>
    <section id="inicio">
@@ -62,7 +62,15 @@
                <h4>Poxa, o tempo para jogar acabou!</h4>
                <div class="btn-box">
                   <button id="voltar-jogo">Voltar ao Jogo</button>
-                  <button id="voltar-menu">Voltar ao Menu</button>
+                  <button onclick=voltarAoMenu()>Voltar ao Menu</button>
+               </div>
+            </div>
+         </div>
+         <div class="wrap">
+            <div class="modal" id="modal-fim-de-jogo">
+               <h4 id="msg-fim-de-jogo">.</h4>
+               <div class="btn-box">
+                  <button onclick=voltarAoMenu()>Voltar ao Menu</button>
                </div>
             </div>
          </div>
@@ -92,8 +100,11 @@
 <script src="js/movimentacao.js"></script>
 <script src="js/movimentoAleatorio.js"></script>
 <script src="js/outroJogador.js"></script>
+<script src="js/voltarAoMenu.js"></script>
+<script src="js/modal/fimDeJogo.js"></script>
 <script src="js/computador.js"></script>
 <script src="js/cronometro.js"></script>
+<script src="js/confetti.js"></script>
 <script>let xadrez = new Xadrez();</script>
 
 </html>

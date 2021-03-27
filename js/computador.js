@@ -48,10 +48,12 @@ atualizarStatusPC = () => {
     }
     else if (game.in_checkmate()) {
         status = 'Jogo acabou, estou em cheque mate.'
+        fimDeJogo(status);
     }
     
     else if (game.in_draw()) {
         status = 'Jogo acabou, empate.'
+        fimDeJogo(status);
     }
     
     else {

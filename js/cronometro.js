@@ -1,6 +1,5 @@
 var modalTempoAcabou = document.querySelector('#modal-acabou-tempo-partida');
 var botaoVoltarJogo = document.querySelector('#voltar-jogo');
-var botaoVoltarMenu = document.querySelector('#voltar-menu');
 
 var countDownDate = null;
 
@@ -35,13 +34,4 @@ botaoVoltarJogo.addEventListener('click', function (e) {
   document.querySelector('#inicio').style.display = "none";
   document.querySelector('.partida').style.display = "block";
   new Cronometro().setCountDownDate(3);
-});
-
-botaoVoltarMenu.addEventListener('click', function (e) {
-  xadrez.zerarJogo();
-  modalTempoAcabou.style.display = "none";
-  document.querySelector('#cabecalho').style.display = "block";
-  let menu = new Menu();
-  menu.exibir();
-  new Cronometro().setCountDownDate(10);
 });

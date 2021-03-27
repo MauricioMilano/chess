@@ -22,17 +22,19 @@ class OutroJogador extends Movimentacao {
 
 atualizarStatusOJ = () => {
     new Cronometro().setCountDownDate(3)
-    var moveColor = 'Branca'
+    var moveColor = 'branca'
     if (game.turn() === 'b') {
-        moveColor = 'Preta'
+        moveColor = 'preta'
     }
 
     if (game.in_checkmate()) {
-        status = 'Jogo acabou, ' + moveColor + ' está em cheque mate'
+        status = 'Jogo acabou, peça ' + moveColor + ' está em cheque mate'
+        fimDeJogo(status);
     }
 
     else if (game.in_draw()) {
         status = 'Jogo acabou, empate'
+        fimDeJogo(status);
     }
 
     else {
