@@ -12,7 +12,7 @@ class Cronometro {
 var x = setInterval(function() {
   var now = new Date().getTime();
   
-  countDownDate = countDownDate == null ? new Date(new Date().getTime() + 10 * 60000).getTime() : countDownDate;
+  countDownDate = countDownDate == null ? new Date(new Date().getTime() + 100 * 60000).getTime() : countDownDate;
   var distance = countDownDate - now;
     
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));

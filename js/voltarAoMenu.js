@@ -5,6 +5,6 @@ function voltarAoMenu() {
     document.querySelector('#cabecalho').style.display = "block";
     let menu = new Menu();
     menu.exibir();
-    new Cronometro().setCountDownDate(10);
+    new Cronometro().setCountDownDate(100);
     confetti.stop();
 }
