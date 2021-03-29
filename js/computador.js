@@ -6,18 +6,24 @@ var $pgn = $('#pgn')
 class Computador extends Movimentacao {
 
     onDragStart(source, piece, position, orientation) {
-        super.onDragStart(source, piece, position, orientation);
-        
-        if (corDaPecaEscolhida == CorDaPeca.Preta) {
-            if (piece.search(/^w/) !== -1) return false
-        } else {
+        super.onDragStart()
+
+        if (game.turn() === 'w' && corDaPecaEscolhida == CorDaPeca.Preta) {
             if (piece.search(/^b/) !== -1) return false
         }
     }
 
     onDrop(source, target) {
-        super.onDrop(source, target);
+        var move = game.move({
+            from: source,
+            to: target,
+            promotion: 'q' 
+          })
+        
+          if (move === null) return 'snapback'
+
         movimentoAleatorio();
+
         atualizarStatusPC();
     }
 
@@ -25,9 +31,9 @@ class Computador extends Movimentacao {
 
 atualizarStatusPC = () => {
     new Cronometro().setCountDownDate(3)
-    
+
     var vezDoJogador = (game.turn() === 'b') && (corDaPecaEscolhida == CorDaPeca.Branca)
-    
+
     var frasesAleatorias = [
         "Mas você tem certeza que fez essa jogada?",
         "Se eu tivesse uma avó, ela jogaria mais rápido que você...",
@@ -38,11 +44,11 @@ atualizarStatusPC = () => {
         "Bem pensado...",
         "É só isso que você consegue fazer?"
     ]
-    
+
     var fraseAleatoria = frasesAleatorias[Math.floor(Math.random() * frasesAleatorias.length)];
-    
+
     var status = 'Sua vez! '
-    
+
     if (game.in_checkmate() && vezDoJogador) {
         status = 'Jogo acabou, você está em cheque mate.'
     }
@@ -50,12 +56,12 @@ atualizarStatusPC = () => {
         status = 'Jogo acabou, estou em cheque mate.'
         fimDeJogo(status);
     }
-    
+
     else if (game.in_draw()) {
         status = 'Jogo acabou, empate.'
         fimDeJogo(status);
     }
-    
+
     else {
         if (game.in_check() && vezDoJogador) {
             status += 'Você está em cheque. '
