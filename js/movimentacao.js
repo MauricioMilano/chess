@@ -81,6 +81,7 @@ class Movimentacao {
         if (movimento!=null){
             return 'snapback'
         }
+
     }
     
     quadradoCinza = (quadrado) => {

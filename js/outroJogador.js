@@ -15,40 +15,35 @@ class OutroJogador extends Movimentacao {
 
     onDrop(source, target) {
        super.onDrop(source, target);
-        updateStatus()
+       atualizarStatusOJ()
     }
 
 }
 
-updateStatus = () => {
-    var status = 'O jogo iniciou'
+atualizarStatusOJ = () => {
     new Cronometro().setCountDownDate(3)
-    var moveColor = 'Branca'
+    var moveColor = 'branca'
     if (game.turn() === 'b') {
         moveColor = 'Preta'
-
     }
 
-    // checkmate?
     if (game.in_checkmate()) {
-        status = 'Jogo acabou, ' + moveColor + ' está em cheque mate'
+        status = 'Jogo acabou, peça ' + moveColor + ' está em cheque mate'
+        fimDeJogo(status);
     }
 
-    // draw?
     else if (game.in_draw()) {
         status = 'Jogo acabou, empate'
+        fimDeJogo(status);
     }
 
-    // game still on
     else {
         status = "Vez da peça " + moveColor
 
-        // check?
         if (game.in_check()) {
             status += ', ' + moveColor + ' está em cheque'
         }
     }
-    console.log(game.position())
     $status.html(status)
     $fen.html(game.fen())
     $pgn.html(game.pgn())

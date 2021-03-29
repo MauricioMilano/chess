@@ -3,14 +3,24 @@ class Xadrez {
     iniciaJogo(tipoDoJogo) {
         this.tipoDoJogo = tipoDoJogo;
         this._tabuleiro = Chessboard('board1', this.config);
+        this._tabuleiro.clear();
         this._tabuleiro.start();
         corDaPecaEscolhida == CorDaPeca.Preta && this.virarTabuleiro();
     }
 
     limpar() {
-        this._tabuleiro.clear();
+        this._tabuleiro.clear(false);
     }
 
+    iniciar() {
+        this._tabuleiro.start(false);
+    }
+
+    zerarJogo() {
+        this.limpar();
+        this.iniciar();
+        game.reset()
+    }
 
     virarTabuleiro() {
         this._tabuleiro.flip();
@@ -19,7 +29,12 @@ class Xadrez {
 
     get config() {
         this.movimentacao = this.tipoDoJogo == TipoDoJogo.Computador ? new Computador() : new OutroJogador();
-        corDaPecaEscolhida == CorDaPeca.Preta && movimentoAleatorio();
+        new Cronometro().setCountDownDate(3);
+
+        if (corDaPecaEscolhida == CorDaPeca.Preta) {
+            movimentoAleatorio();
+            $('#status').html("Sua vez!");
+        }
         
         return {
             draggable: true,
