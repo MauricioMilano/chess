@@ -60,6 +60,7 @@ class Movimentacao {
         if (inPromotion){
             return "snapback"
         }
+
         const movimentacao = {
             from: source,
             to: target,
@@ -78,7 +79,7 @@ class Movimentacao {
             }
         }
 
-        if (movimento!=null){
+        if (movimento == null){
             return 'snapback'
         }
 
