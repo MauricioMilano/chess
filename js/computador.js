@@ -14,17 +14,9 @@ class Computador extends Movimentacao {
     }
 
     onDrop(source, target) {
-        var move = game.move({
-            from: source,
-            to: target,
-            promotion: 'q' 
-          })
-        
-          if (move === null) return 'snapback'
+        let snapback = super.onDrop(source, target);
 
-        movimentoAleatorio();
-
-        atualizarStatusPC();
+        snapback == null && movimentoAleatorio() && atualizarStatusPC();
     }
 
 }

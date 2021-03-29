@@ -28,19 +28,14 @@ class Movimentacao {
     }
 
     onDrop(source, target) {
-        const movimentacao = {
+
+        let movimentacao = game.move({
             from: source,
             to: target,
             promotion: 'q' 
-        }
-        // var movimento = null;
-        // let validation = game.validateMovementAndPromotion(movimentacao)
-        // if(validation.movement){
-        var movimento = game.move(movimentacao)
-        // }
-        if (movimento!=null){
-            return 'snapback'
-        }
+          })
+        
+          if (movimentacao === null) return 'snapback'
     }
     
     quadradoCinza = (quadrado) => {
