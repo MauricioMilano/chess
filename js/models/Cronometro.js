@@ -1,4 +1,4 @@
-var modalTempoAcabou = document.querySelector('#modal-acabou-tempo-partida');
+var menuTempoAcabou = document.querySelector('#menu-acabou-tempo-partida');
 var botaoVoltarJogo = document.querySelector('#voltar-jogo');
 
 var countDownDate = null;
@@ -23,14 +23,14 @@ var x = setInterval(function () {
   if (distance < 0) {
     document.querySelector('.partida').style.display = "none";
     document.querySelector('#inicio').style.display = "block";
-    modalTempoAcabou.style.display = "block";
+    menuTempoAcabou.style.display = "block";
     document.getElementById("clock").innerHTML = "Acabou o Tempo!";
   }
 }, 1000);
 
 
 botaoVoltarJogo.addEventListener('click', function (e) {
-  modalTempoAcabou.style.display = "none";
+  menuTempoAcabou.style.display = "none";
   document.querySelector('#inicio').style.display = "none";
   document.querySelector('.partida').style.display = "block";
   new Cronometro().setCountDownDate(3);

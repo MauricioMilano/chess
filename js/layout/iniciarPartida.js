@@ -1,5 +1,5 @@
-var modalIniciarPartida = document.querySelector('#modal-iniciar-partida');
-var modalEscolherPeca = document.querySelector('#modal-escolher-peca');
+var menuIniciarPartida = document.querySelector('#menu-iniciar-partida');
+var menuEscolherPeca = document.querySelector('#menu-escolher-peca');
 var botaoIniciarPartida = document.querySelector('#botao-iniciar-partida');
 var botaoComputador = document.querySelector('#computador');
 var botaoOutroJogador = document.querySelector('#outro-jogador');
@@ -11,7 +11,7 @@ var corDaPecaEscolhida = null;
 botaoIniciarPartida.addEventListener('click', function (e) {
     let menu = new Menu();
     menu.remover();
-    modalIniciarPartida.style.display = "block";
+    menuIniciarPartida.style.display = "block";
 });
 
 botaoOutroJogador.addEventListener('click', function (e) {
@@ -20,8 +20,8 @@ botaoOutroJogador.addEventListener('click', function (e) {
 });
 
 botaoComputador.addEventListener('click', function (e) {
-    modalIniciarPartida.style.display = "none";
-    modalEscolherPeca.style.display = "block";
+    menuIniciarPartida.style.display = "none";
+    menuEscolherPeca.style.display = "block";
 });
 
 botaoPecaBranca.addEventListener('click', function (e) {
@@ -40,6 +40,6 @@ function iniciarPartida() {
     document.querySelector('.partida').style.display = "block";
     document.querySelector('#cabecalho').style.display = "none";
     document.querySelector('#inicio').style.display = "none";
-    modalEscolherPeca.style.display = "none";
-    modalIniciarPartida.style.display = "none";
+    menuEscolherPeca.style.display = "none";
+    menuIniciarPartida.style.display = "none";
 }

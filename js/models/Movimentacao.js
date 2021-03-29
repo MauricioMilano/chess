@@ -1,4 +1,4 @@
-var promocaoDisplay = document.querySelector('#promocao-preta');
+var promocaoDisplay = document.querySelector('#promocao');
 var game = new Chess()
 var $fen = $('#fen');
 var hold = {

@@ -58,26 +58,13 @@ button:hover {
     background-color: transparent;
 }
 
-button.peca {
+.peca {
     background: white;
-    background-position: center;
-    display: inline-block;
-    border: none;
     padding: 20px;
     width: 80px;
     height: 80px;
     margin: 0 20px;
-    transition: all 0.5s;
     cursor: pointer;
-}
-
-
-button.peca.branca {
-    background-image: url('../img/chesspieces/wikipedia/wK.png');
-}
-
-button.peca.preta {
-    background-image: url('../img/chesspieces/wikipedia/bK.png');
 }
 
 .wrap {
@@ -95,7 +82,7 @@ button.peca.preta {
     min-height: 100px;
 }
 
-.promocao{ 
+.modal{ 
     width: 334px;
     border: 1px solid black;
     margin-bottom: 10px;

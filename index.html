@@ -6,7 +6,7 @@
    <title>Xadrezin</title>
    <link rel="stylesheet" type="text/css" href="css/style.css">
    <link rel="stylesheet" type="text/css" href="css/chessboard-1.0.0.css">
-   <link rel="stylesheet" type="text/css" href="css/modal.css">
+   <link rel="stylesheet" type="text/css" href="css/menu.css">
    <link rel="stylesheet" type="text/css" href="css/pieces.css">
    <link rel="stylesheet" type="text/css" href="css/mensagem.css">
 
@@ -41,7 +41,7 @@
             <button class="btn-open is-active" id="botao-ajuda">Ajuda</button>
          </div>
          <div class="wrap">
-            <div class="modal" id="modal-iniciar-partida">
+            <div class="menu" id="menu-iniciar-partida">
                <h4>Você deseja jogar contra quem?</h4>
                <div class="btn-box">
                   <button id="computador">Computador</button>
@@ -50,16 +50,16 @@
             </div>
          </div>
          <div class="wrap">
-            <div class="modal" id="modal-escolher-peca">
+            <div class="menu" id="menu-escolher-peca">
                <h4>Escolha uma cor de peça:</h4>
                <div class="btn-box">
-                  <button class="peca branca" id="peca-branca"></button>
-                  <button class="peca preta" id="peca-preta"></button>
+                  <button class="piece wK" id="peca-branca"></button>
+                  <button class="piece bK" id="peca-preta"></button>
                </div>
             </div>
          </div>
          <div class="wrap">
-            <div class="modal" id="modal-acabou-tempo-partida">
+            <div class="menu" id="menu-acabou-tempo-partida">
                <h4>Poxa, o tempo para jogar acabou!</h4>
                <div class="btn-box">
                   <button id="voltar-jogo">Voltar ao Jogo</button>
@@ -68,7 +68,7 @@
             </div>
          </div>
          <div class="wrap">
-            <div class="modal" id="modal-fim-de-jogo">
+            <div class="menu" id="menu-fim-de-jogo">
                <h4 id="msg-fim-de-jogo">.</h4>
                <div class="btn-box">
                   <button onclick=voltarAoMenu()>Voltar ao Menu</button>
@@ -76,7 +76,7 @@
             </div>
          </div>
          <div class="wrap">
-            <div class="modal" id="modal-ajuda">
+            <div class="menu" id="menu-ajuda">
                <h4>Em Breve!</h4>
                <div class="btn-box">
                   <button id="fechar-ajuda">Sair</button>
@@ -85,19 +85,12 @@
          </div>
       </div>
    </section>
-   <div class="promocao" id="promocao-preta" >
+   <div class="modal" id="promocao" >
       <h3>Para qual peça deseja promover?</h3>
-      <button class="piece bB" id="" onclick="promoverPeca('b')"></button>
-      <button class="piece bN" id="" onclick="promoverPeca('n')"></button>
-      <button class="piece bQ" id="" onclick="promoverPeca('q')"></button>
-      <button class="piece bR" id="" onclick="promoverPeca('r')"></button>
-   </div> 
-   <div class="promocao" id="promocao-branca" >
-      <h3>Para qual peça deseja promover?</h3>
-      <button class="piece wB" id=""></button>
-      <button class="piece wN" id=""></button>
-      <button class="piece wQ" id=""></button>
-      <button class="piece wR" id=""></button>
+      <button class="piece bB" onclick="promoverPeca('b')"></button>
+      <button class="piece bN" onclick="promoverPeca('n')"></button>
+      <button class="piece bQ" onclick="promoverPeca('q')"></button>
+      <button class="piece bR" onclick="promoverPeca('r')"></button>
    </div> 
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"

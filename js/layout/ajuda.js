@@ -1,15 +1,15 @@
-var modalAjuda = document.querySelector('#modal-ajuda');
+var menuAjuda = document.querySelector('#menu-ajuda');
 var botaoAjuda = document.querySelector('#botao-ajuda');
-var botaoFecharModalAjuda = document.querySelector('#fechar-ajuda');
+var botaoFecharMenuAjuda = document.querySelector('#fechar-ajuda');
 
 botaoAjuda.addEventListener('click', function (e) {
     let menu = new Menu();
     menu.remover();
-    modalAjuda.style.display = "block";
+    menuAjuda.style.display = "block";
 })
 
-botaoFecharModalAjuda.addEventListener('click', function (e) {
+botaoFecharmenuAjuda.addEventListener('click', function (e) {
     let menu = new Menu();
     menu.exibir();
-    modalAjuda.style.display = "none";
+    menuAjuda.style.display = "none";
 });
