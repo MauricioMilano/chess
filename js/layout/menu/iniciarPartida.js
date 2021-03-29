@@ -1,5 +1,3 @@
-var menuIniciarPartida = document.querySelector('#menu-iniciar-partida');
-var menuEscolherPeca = document.querySelector('#menu-escolher-peca');
 var botaoIniciarPartida = document.querySelector('#botao-iniciar-partida');
 var botaoComputador = document.querySelector('#computador');
 var botaoOutroJogador = document.querySelector('#outro-jogador');
@@ -8,38 +6,39 @@ var botaoPecaPreta = document.querySelector('#peca-preta');
 
 var corDaPecaEscolhida = null;
 
+var menuInicial = new Menu('.botoesMenu');
+var menuIniciarPartida = new Menu('#menu-iniciar-partida');
+var menuEscolherPeca = new Menu('#menu-escolher-peca');
+
 botaoIniciarPartida.addEventListener('click', function (e) {
-    let menu = new Menu();
-    menu.remover();
-    menuIniciarPartida.style.display = "block";
+    menuInicial.remover();
+    menuIniciarPartida.exibir();
 });
 
 botaoOutroJogador.addEventListener('click', function (e) {
-    iniciarPartida();
-    xadrez.iniciaJogo(TipoDoJogo.OutroJogador);
+    iniciarPartida(TipoDoJogo.OutroJogador);
 });
 
 botaoComputador.addEventListener('click', function (e) {
-    menuIniciarPartida.style.display = "none";
-    menuEscolherPeca.style.display = "block";
+    menuIniciarPartida.remover();
+    menuEscolherPeca.exibir();
 });
 
 botaoPecaBranca.addEventListener('click', function (e) {
-    iniciarPartida();
     corDaPecaEscolhida = CorDaPeca.Branca;
-    xadrez.iniciaJogo(TipoDoJogo.Computador);
+    iniciarPartida(TipoDoJogo.Computador);
 });
 
 botaoPecaPreta.addEventListener('click', function (e) {
-    iniciarPartida();
     corDaPecaEscolhida = CorDaPeca.Preta;
-    xadrez.iniciaJogo(TipoDoJogo.Computador);
+    iniciarPartida(TipoDoJogo.Computador);
 });
 
-function iniciarPartida() {
+function iniciarPartida(tipoDoJogo) {
     document.querySelector('.partida').style.display = "block";
     document.querySelector('#cabecalho').style.display = "none";
     document.querySelector('#inicio').style.display = "none";
-    menuEscolherPeca.style.display = "none";
-    menuIniciarPartida.style.display = "none";
+    menuIniciarPartida.remover();
+    menuEscolherPeca.remover();
+    xadrez.iniciaJogo(tipoDoJogo);
 }

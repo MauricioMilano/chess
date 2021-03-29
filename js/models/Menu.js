@@ -1,14 +1,18 @@
 class Menu {
 
+  constructor(tipo) {
+    this._tipo = document.querySelector(tipo);
+  }
+
   exibir() {
-    this.botoes.style.display = "block";
+    this._tipo.style.display = "block";
   }
 
   remover() {
-    this.botoes.style.display = "none";
+    this._tipo.style.display = "none";
   }
 
-  get botoes() {
-    return document.querySelector('.botoesMenu');
+  get tipo() {
+    return this._tipo
   }
 }
