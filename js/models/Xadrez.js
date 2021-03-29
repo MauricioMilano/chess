@@ -28,14 +28,17 @@ class Xadrez {
 
 
     get config() {
-        this.movimentacao = this.tipoDoJogo == TipoDoJogo.Computador ? new Computador() : new OutroJogador();
+        this.movimentacao = null;
         new Cronometro().setCountDownDate(3);
 
-        if (corDaPecaEscolhida == CorDaPeca.Preta) {
-            movimentoAleatorio();
+        if (this.tipoDoJogo == TipoDoJogo.Computador) {
             $('#status').html("Sua vez!");
+            corDaPecaEscolhida == CorDaPeca.Preta && movimentoAleatorio();
+            this.movimentacao = new ContraComputador();
+        } else {
+            this.movimentacao = new ContraJogador();
         }
-        
+
         return {
             draggable: true,
             dropOffBoard: 'snapback',

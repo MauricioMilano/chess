@@ -2,8 +2,7 @@ var $status = $('#status')
 var $fen = $('#fen')
 var $pgn = $('#pgn')
 
-
-class OutroJogador extends Movimentacao {
+class ContraJogador extends Movimentacao {
 
     onDragStart(source, piece, position, orientation) {
        super.onDragStart(source, piece, position, orientation)
@@ -15,12 +14,12 @@ class OutroJogador extends Movimentacao {
 
     onDrop(source, target) {
        super.onDrop(source, target);
-       atualizarStatusOJ()
+       atualizarStatusJogador()
     }
 
 }
 
-atualizarStatusOJ = () => {
+atualizarStatusJogador = () => {
     new Cronometro().setCountDownDate(3)
     var moveColor = 'branca'
     if (game.turn() === 'b') {

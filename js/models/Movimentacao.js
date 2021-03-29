@@ -6,6 +6,7 @@ var hold = {
     to: "" 
 }
 var inPromotion = false; 
+
 function quadradoCinza(quadrado) {
     var $quadrado = $('#board1 .square-' + quadrado)
     
@@ -16,34 +17,30 @@ function quadradoCinza(quadrado) {
 
     $quadrado.css('background', background);
 }
-function promoverPeca(p){
-    // coloco a promoção no objeto a ser movido 
+
+function promoverPeca(p){ 
     hold.promotion = p
-    // tiro a tela de promoção
     promocaoDisplay.style.display = "none";
-    // pego a posicão que estava o xadrez 
+
     let position = xadrez.tabuleiro.position()
-    // movo a peça visualmente e promovo. 
     xadrez.tabuleiro.move(`${hold.from}-${hold.to}`,`w${p.toUpperCase()}`)
+
     if (game.turn() === 'b'){
         position[hold.to] = `b${p.toUpperCase()}`;
-    }else{
+    } else{
         position[hold.to] = `w${p.toUpperCase()}`;
 
     }
-    // apago a peça antiga viualmente
     delete position[hold.from]
     xadrez.tabuleiro.position(position)
-    // faço o movimento real dentro das regras 
     game.move(hold)
-    // desbloqueio o tabuleiro
     inPromotion = false
-
 }
+
 class Movimentacao {
 
     constructor() {
-        if(this.constructor == Movimentacao){
+        if (this.constructor == Movimentacao){
             throw new Error("Você não deveria instanciar um objeto do tipo Movimentcao diretamente, pois essa é uma classe abstata");
         }
     }
@@ -53,7 +50,6 @@ class Movimentacao {
         if (game.game_over()) {
             return false
         }
-        
     }
 
     onDrop(source, target) {

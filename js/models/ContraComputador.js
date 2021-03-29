@@ -3,7 +3,7 @@ var $status = $('#status')
 var $fen = $('#fen')
 var $pgn = $('#pgn')
 
-class Computador extends Movimentacao {
+class ContraComputador extends Movimentacao {
 
     onDragStart(source, piece, position, orientation) {
         super.onDragStart()
@@ -16,7 +16,8 @@ class Computador extends Movimentacao {
     onDrop(source, target) {
         let snapback = super.onDrop(source, target);
 
-        snapback == null && movimentoAleatorio() && atualizarStatusPC();
+        snapback == null && movimentoAleatorio();
+        atualizarStatusPC();
     }
 
 }
