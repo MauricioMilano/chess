@@ -59,11 +59,11 @@ atualizarStatusPC = () => {
         if (game.in_check() && vezDoJogador) {
             status += 'Você está em cheque. '
         } else {
-            status += fraseAleatoria
+            status += "\n" + fraseAleatoria
         }
     }
 
-    $status.html(status)
+    $status.html(status.replace(/\r?\n/g, '<br/>'))
     $fen.html(game.fen())
     $pgn.html(game.pgn())
 }
