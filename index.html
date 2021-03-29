@@ -7,6 +7,7 @@
    <link rel="stylesheet" type="text/css" href="css/style.css">
    <link rel="stylesheet" type="text/css" href="css/chessboard-1.0.0.css">
    <link rel="stylesheet" type="text/css" href="css/modal.css">
+   <link rel="stylesheet" type="text/css" href="css/pieces.css">
    <link rel="stylesheet" type="text/css" href="css/mensagem.css">
 
    <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -84,7 +85,20 @@
          </div>
       </div>
    </section>
-
+   <div class="promocao" id="promocao-preta" >
+      <h3>Para qual peça deseja promover?</h3>
+      <button class="piece bB" id="" onclick="promoverPeca('b')"></button>
+      <button class="piece bN" id="" onclick="promoverPeca('n')"></button>
+      <button class="piece bQ" id="" onclick="promoverPeca('q')"></button>
+      <button class="piece bR" id="" onclick="promoverPeca('r')"></button>
+   </div> 
+   <div class="promocao" id="promocao-branca" >
+      <h3>Para qual peça deseja promover?</h3>
+      <button class="piece wB" id=""></button>
+      <button class="piece wN" id=""></button>
+      <button class="piece wQ" id=""></button>
+      <button class="piece wR" id=""></button>
+   </div> 
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"
    integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
@@ -97,6 +111,7 @@
 <script src="js/menu.js"></script>
 <script src="js/modal/ajuda.js"></script>
 <script src="js/modal/iniciarPartida.js"></script>
+<script src="js/utils/mouse_utils.js"></script>
 <script src="js/movimentacao.js"></script>
 <script src="js/movimentoAleatorio.js"></script>
 <script src="js/outroJogador.js"></script>

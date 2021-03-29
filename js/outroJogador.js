@@ -24,7 +24,7 @@ atualizarStatusOJ = () => {
     new Cronometro().setCountDownDate(3)
     var moveColor = 'branca'
     if (game.turn() === 'b') {
-        moveColor = 'preta'
+        moveColor = 'Preta'
     }
 
     if (game.in_checkmate()) {
@@ -44,7 +44,6 @@ atualizarStatusOJ = () => {
             status += ', ' + moveColor + ' está em cheque'
         }
     }
-
     $status.html(status)
     $fen.html(game.fen())
     $pgn.html(game.pgn())

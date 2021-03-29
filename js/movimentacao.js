@@ -1,6 +1,11 @@
+var promocaoDisplay = document.querySelector('#promocao-preta');
 var game = new Chess()
 var $fen = $('#fen');
-
+var hold = {
+    from:"",
+    to: "" 
+}
+var inPromotion = false; 
 function quadradoCinza(quadrado) {
     var $quadrado = $('#board1 .square-' + quadrado)
     
@@ -11,7 +16,30 @@ function quadradoCinza(quadrado) {
 
     $quadrado.css('background', background);
 }
+function promoverPeca(p){
+    // coloco a promoção no objeto a ser movido 
+    hold.promotion = p
+    // tiro a tela de promoção
+    promocaoDisplay.style.display = "none";
+    // pego a posicão que estava o xadrez 
+    let position = xadrez.tabuleiro.position()
+    // movo a peça visualmente e promovo. 
+    xadrez.tabuleiro.move(`${hold.from}-${hold.to}`,`w${p.toUpperCase()}`)
+    if (game.turn() === 'b'){
+        position[hold.to] = `b${p.toUpperCase()}`;
+    }else{
+        position[hold.to] = `w${p.toUpperCase()}`;
 
+    }
+    // apago a peça antiga viualmente
+    delete position[hold.from]
+    xadrez.tabuleiro.position(position)
+    // faço o movimento real dentro das regras 
+    game.move(hold)
+    // desbloqueio o tabuleiro
+    inPromotion = false
+
+}
 class Movimentacao {
 
     constructor() {
@@ -25,17 +53,35 @@ class Movimentacao {
         if (game.game_over()) {
             return false
         }
+        
     }
 
     onDrop(source, target) {
-
-        let movimentacao = game.move({
+        if (inPromotion){
+            return "snapback"
+        }
+        const movimentacao = {
             from: source,
             to: target,
-            promotion: 'q' 
-          })
-        
-          if (movimentacao === null) return 'snapback'
+        }
+        var movimento = null;
+        let validation = game.validateMovementAndPromotion(movimentacao)
+        if(validation.movement){
+            hold = movimentacao
+            if (validation.promotion){
+                promocaoDisplay.style.display = "block";
+                promocaoDisplay.style.left = `${(mouse_x - 80)}px`
+                promocaoDisplay.style.top = `${(mouse_y - 80)}px`
+                inPromotion = true;
+            }else{
+                movimento = game.move(movimentacao)
+            }
+        }
+
+        if (movimento!=null){
+            return 'snapback'
+        }
+
     }
     
     quadradoCinza = (quadrado) => {
