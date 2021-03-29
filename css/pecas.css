@@ -41,9 +41,14 @@
 .wR{
       background-image: url('../img/chesspieces/wikipedia/wR.png');
 }
-.piece {
+.peca {
       width: 80px;
       height: 80px;
       background-color: white;
       cursor: pointer;
+}
+
+.peca.inicio-partida {
+    padding: 20px;
+    margin: 0 20px;
 }

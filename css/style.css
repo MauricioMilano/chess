@@ -57,7 +57,7 @@ button:hover {
     color: #000;
     background-color: transparent;
 }
-
+/* 
 .peca {
     background: white;
     padding: 20px;
@@ -65,7 +65,7 @@ button:hover {
     height: 80px;
     margin: 0 20px;
     cursor: pointer;
-}
+} */
 
 .wrap {
     margin: auto;
