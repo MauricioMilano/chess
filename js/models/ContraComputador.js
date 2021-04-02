@@ -7,7 +7,7 @@ class ContraComputador extends Movimentacao {
 
     onDragStart(source, piece, position, orientation) {
         super.onDragStart()
-
+        debugger
         if (game.turn() === 'w' && corDaPecaEscolhida == CorDaPeca.Preta) {
             if (piece.search(/^b/) !== -1) return false
         }
@@ -15,7 +15,6 @@ class ContraComputador extends Movimentacao {
 
     onDrop(source, target) {
         let snapback = super.onDrop(source, target);
-
         snapback == null && movimentoAleatorio();
         atualizarStatusPC();
     }

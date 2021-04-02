@@ -14,7 +14,7 @@ function quadradoCinza(quadrado) {
     if ($quadrado.hasClass('black-3c85d')) {
         background = '#696969'
     }
-
+ 
     $quadrado.css('background', background);
 }
 
@@ -25,16 +25,17 @@ function promoverPeca(p){
     let position = xadrez.tabuleiro.position()
     xadrez.tabuleiro.move(`${hold.from}-${hold.to}`,`w${p.toUpperCase()}`)
 
+    debugger
     if (game.turn() === 'b'){
         position[hold.to] = `b${p.toUpperCase()}`;
     } else{
         position[hold.to] = `w${p.toUpperCase()}`;
-
     }
     delete position[hold.from]
     xadrez.tabuleiro.position(position)
     game.move(hold)
     inPromotion = false
+    xadrez.tipoDoJogo == TipoDoJogo.Computador && movimentoAleatorio();
 }
 
 class Movimentacao {
