@@ -42,10 +42,11 @@ atualizarStatusPC = () => {
     var status = 'Sua vez! '
 
     if (game.in_checkmate() && vezDoJogador) {
-        status = 'Jogo acabou, você está em cheque mate.'
+        status = 'Jogo acabou, estou em cheque mate.'
+        fimDeJogo(status);
     }
     else if (game.in_checkmate()) {
-        status = 'Jogo acabou, estou em cheque mate.'
+        status = 'Jogo acabou, você está em cheque mate.'
         fimDeJogo(status);
     }
 
