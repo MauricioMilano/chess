@@ -59,7 +59,13 @@ atualizarStatusPC = () => {
         if (game.in_check() && vezDoJogador) {
             status += 'Você está em cheque. '
         } else {
-            status += "\n" + fraseAleatoria
+            if (game.in_check()) {
+                status += 'Eu estou em cheque. '
+            }
+            else {
+                status += "\n" + fraseAleatoria
+            }
+
         }
     }
 
