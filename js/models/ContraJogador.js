@@ -21,13 +21,13 @@ class ContraJogador extends Movimentacao {
 
 atualizarStatusJogador = () => {
     new Cronometro().setCountDownDate(3)
-    var moveColor = 'branca'
+    var moveColor = 'Branca'
     if (game.turn() === 'b') {
         moveColor = 'Preta'
     }
 
     if (game.in_checkmate()) {
-        status = 'Jogo acabou, peça ' + moveColor + ' está em cheque mate'
+        status = 'Jogo acabou, jogador daa peçaa ' + moveColor + ' está em cheque mate'
         fimDeJogo(status);
     }
 
@@ -37,7 +37,7 @@ atualizarStatusJogador = () => {
     }
 
     else {
-        status = "Vez da peça " + moveColor
+        status = "Vez do jogador das peças " + moveColor
 
         if (game.in_check()) {
             status += ', ' + moveColor + ' está em cheque'

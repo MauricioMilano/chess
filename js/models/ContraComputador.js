@@ -42,25 +42,25 @@ atualizarStatusPC = () => {
     var status = 'Sua vez! '
 
     if (game.in_checkmate() && vezDoJogador) {
-        status = 'Jogo acabou, estou em cheque mate.'
+        status = 'Jogo acabou, você venceu!'
         fimDeJogo(status);
     }
     else if (game.in_checkmate()) {
-        status = 'Jogo acabou, você está em cheque mate.'
+        status = 'Jogo acabou, você perdeu!'
         fimDeJogo(status);
     }
 
     else if (game.in_draw()) {
-        status = 'Jogo acabou, empate.'
+        status = 'Jogo acabou, empatamos.'
         fimDeJogo(status);
     }
 
     else {
         if (game.in_check() && vezDoJogador) {
-            status += 'Você está em cheque. '
+            status += 'Você está em xeque. '
         } else {
             if (game.in_check()) {
-                status += 'Eu estou em cheque. '
+                status += 'A máquina está em xeque. '
             }
             else {
                 status += "\n" + fraseAleatoria
