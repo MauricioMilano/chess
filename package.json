@@ -1,0 +1,27 @@
+{
+  "name": "chess",
+  "version": "1.0.0",
+  "description": "projeto para subir o Xadrez ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MauricioMilano/chess.git"
+  },
+  "author": "Mauricio Milano & Samantha Costa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MauricioMilano/chess/issues"
+  },
+  "homepage": "https://github.com/MauricioMilano/chess#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "vuepress": "^1.8.2"
+  }
+}
