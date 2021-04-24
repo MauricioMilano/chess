@@ -1,6 +1,20 @@
 module.exports = {
-  themeConfig: {
-    sidebar: 'auto'
+	themeConfig: {
+    nav: [
+      {
+        text: 'Tutorial Xadrezinho',
+				link:"/tutorial"
+      },
+			{
+				text:'Manual Xadrez',
+				link:'/'
+			},
+			{
+				text: 'Autores',
+				link: '/autores'
+			}
+    ],
+		sidebar:"auto"
   },
 	dest:"/docs/.vuepress/dist/",
   markdown: {
