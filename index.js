@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
-const port = 3000
+let port = 3000
 app.use('/', express.static(__dirname + '/'));
-// app.use("/docs", express.static(__dirname + '/docs/.vuepress/dist'))
-app.listen(process.env.PORT || port, () => {
+port = process.env.PORT || process.argv[2] || port;
+
+app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
