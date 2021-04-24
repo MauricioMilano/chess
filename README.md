@@ -4,7 +4,8 @@ Um jogo de xadrez pra você jogar com um amigo ou até mesmo sozinho!
 ## Manual
 Para visualizar um manual das jogadas permitidas, você pode [acessar aqui](https://chessdocumentation.herokuapp.com/)
 ## Executando
-
+### Jogue online
+=> Disponível para jogar online: [Xadrezinho](https://chess-2020-2.herokuapp.com/)!!!!!
 ### Com Html puro
 
 O Xadrezinho pode ser iniciado de 2 formas:
