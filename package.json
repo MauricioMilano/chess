@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "projeto para subir o Xadrez ",
   "main": "index.js",
-	"engines": {"node": "v10.24.1"},
   "scripts": {
     "start": "node .",
     "docs:dev": "vuepress dev docs",

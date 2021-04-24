@@ -16,7 +16,6 @@ module.exports = {
     ],
 		sidebar:"auto"
   },
-	dest:"/docs/.vuepress/dist/",
   markdown: {
     lineNumbers: true
   },
