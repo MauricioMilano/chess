@@ -2,6 +2,7 @@ module.exports = {
   themeConfig: {
     sidebar: 'auto'
   },
+	dest:"/docs/.vuepress/dist/",
   markdown: {
     lineNumbers: true
   },
